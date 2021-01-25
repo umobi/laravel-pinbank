@@ -1,0 +1,56 @@
+{
+    "name": "umobi/laravel-pinbank",
+    "description": "Laravel Wrapper of umobi/pinbank-client",
+    "keywords": [
+        "umobi",
+        "laravel-pinbank"
+    ],
+    "homepage": "https://github.com/umobi/laravel-pinbank",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ramon Vicente",
+            "email": "ramon@umobi.com.br",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0",
+        "umobi/pinbank-client": "^0.0.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0",
+        "symfony/dotenv": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Umobi\\LaravelPinbank\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Umobi\\LaravelPinbank\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Umobi\\LaravelPinbank\\LaravelPinbankServiceProvider"
+            ],
+            "aliases": {
+                "LaravelPinbank": "Umobi\\LaravelPinbank\\LaravelPinbankFacade"
+            }
+        }
+    }
+}
